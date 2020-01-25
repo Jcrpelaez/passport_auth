@@ -27,10 +27,6 @@ app.engine(
 );
 app.set("view engine", ".hbs");
 
-// app.get("/", function(req, res) {
-//   res.send("Welcome to Passport with Sequelize");
-// });
-
 //Models
 var models = require("./app/models");
 
