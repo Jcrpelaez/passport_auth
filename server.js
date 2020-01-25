@@ -51,10 +51,12 @@ models.sequelize
     console.log(err, "Something went wrong with the Database Update!");
   });
 
+  var connection;
+  
 if (process.env.JAWSDB_URL) {
-  var connection = mysql.createConnection(process.env.JAWSDB_URL);
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
-  var connection = mysql.createConnection({
+   connection = mysql.createConnection({
     username: "root",
     password: "utsabootcamp1",
     database: "sequelize_passport",
