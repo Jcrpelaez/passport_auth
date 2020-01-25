@@ -50,3 +50,15 @@ models.sequelize
   .catch(function(err) {
     console.log(err, "Something went wrong with the Database Update!");
   });
+
+if (process.env.JAWSDB_URL) {
+  var connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  var connection = mysql.createConnection({
+    username: "root",
+    password: "utsabootcamp1",
+    database: "sequelize_passport",
+    host: "127.0.0.1",
+    dialect: "mysql"
+  });
+}
