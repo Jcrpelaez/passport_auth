@@ -4,7 +4,7 @@ var passport = require("passport");
 var session = require("express-session");
 var exphbs = require("express-handlebars");
 var PORT = process.env.PORT || 5000;
-var mysql = require("mysql");
+
 //Parse application body
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -50,17 +50,3 @@ models.sequelize
   .catch(function(err) {
     console.log(err, "Something went wrong with the Database Update!");
   });
-
-var connection;
-
-if (process.env.JAWSDB_URL) {
-  connection = mysql.createConnection(process.env.JAWSDB_URL);
-} else {
-  connection = mysql.createConnection({
-    username: "root",
-    password: "utsabootcamp1",
-    database: "sequelize_passport",
-    host: "127.0.0.1",
-    dialect: "mysql"
-  });
-}
