@@ -3,7 +3,7 @@ var app = express();
 var passport = require("passport");
 var session = require("express-session");
 var exphbs = require("express-handlebars");
-var PORT = process.env.PORT || 5000;
+var PORT = process.env.PORT || 8080;
 
 //Parse application body
 app.use(express.urlencoded({ extended: true }));
@@ -22,7 +22,8 @@ app.set("views", "./app/views");
 app.engine(
   "hbs",
   exphbs({
-    extname: ".hbs"
+    extname: ".hbs",
+    defaultLayout: "main"
   })
 );
 app.set("view engine", ".hbs");
